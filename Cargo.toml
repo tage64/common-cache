@@ -1,0 +1,20 @@
+[package]
+name = "common-cache"
+version = "0.1.0"
+authors = ["Tage Johansson <frans.tage@gmail.com>"]
+description = "A hierarchical cache data structure that prioritizes the most commonly used and recently accessed items and can dynamically grow and shrink in size."
+edition = "2021"
+readme = "README.md"
+repository = "https://github.com/tage64/common-cache"
+license = "MIT OR Apache-2.0"
+keywords = ["cache", "hierarchical", "LRU", "hash-map", "random"]
+categories = ["caching", "data-structures"]
+
+[dependencies]
+indexmap = "2.6.0"
+rand = "0.8.5" 
+replace_with = "0.1.7"
+serde = { version = "1.0.147", features = ["derive"], optional = true }
+
+[features]
+serde = ["dep:serde", "indexmap/serde", "rand/serde1"]
